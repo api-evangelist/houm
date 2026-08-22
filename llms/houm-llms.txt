@@ -1,0 +1,43 @@
+site: https://houm.com 
+description: Houm es una innovadora proptech chilena que opera como corredora de propiedades digital en Chile, Colombia y México, con presencia en Santiago, Viña del Mar, Concepción, Bogotá y Ciudad de México, ofreciendo procesos rápidos, seguros y sin burocracia para comprar, vender y arrendar/rentar casas y departamentos. Sus principales diferenciales incluyen arrendar sin necesidad de aval y garantizar el pago puntual al propietario aunque el arrendatario no pague, revolucionando así el mercado inmobiliario latinoamericano mediante tecnología. 
+
+[sections] 
+/cl
+/mx
+/co
+/cl/arriendo-departamentos-region-metropolitana
+/co/arriendo-apartamentos-bogota
+/mx/renta-departamentos-ciudad-de-mexico
+/mx/propietario/administracion-inmuebles-renta 
+/blog
+/help.houm.com
+/mx/algoritmo-precio
+/co/algoritmo-precio 
+/cl/algoritmo-precio 
+/mx/propietario/arriendo
+/cl/propietario/arriendo
+/co/propietario/arriendo
+
+
+[exclusions] 
+
+/marketplace/ 
+/*/cotizador
+/*/contacto 
+/*/[mode] 
+
+[sitemaps] 
+https://houm.com/sitemap-cl.xml 
+https://houm.com/sitemap-mx.xml 
+https://houm.com/sitemap-co.xml 
+
+[metadata] 
+name: Houm 
+author: Houm Technologies SpA 
+Contact: https://help.houm.com/cl
+language: es 
+framework: Next.js 
+content_type: plataforma proptech 
+audience: propietarios, arrendatarios, compradores, agentes inmobiliarios 
+source: https://houm.com 
+documentation_format: HTML 

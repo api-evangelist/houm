@@ -1,0 +1,133 @@
+generated: '2026-08-22'
+method: probed
+source: https://auth.houm.com/.well-known/openid-configuration
+name: Houm well-known discovery documents
+note: >-
+  Every /.well-known path on the houm.com apex 404s (the apex is a Next.js app whose 404 handler
+  serves an 18KB HTML shell, so those bodies are HTML, not documents), and api.houm.com /
+  docs.houm.com are AWS API Gateway custom domains that answer 403 Forbidden / Missing
+  Authentication Token to every anonymous path. The ONE real hit in the estate is Houm's Auth0
+  custom domain auth.houm.com, which serves a complete OpenID Connect 1.0 discovery document
+  (issuer https://auth.houm.com/), the RFC 8414 authorization-server metadata alias, and its JWKS.
+  Those three are saved verbatim below and are the basis of the WellKnown pointer in apis.yml. No
+  security.txt is served anywhere in the estate, so NO SecurityTxt pointer is emitted.
+hosts:
+- host: auth.houm.com
+  note: Houm's Auth0 custom domain — the identity provider behind houm.com and admin.houm.com.
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: well-known/houm-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: well-known/houm-oauth-authorization-server.json
+  - path: /.well-known/jwks.json
+    status: 200
+    file: well-known/houm-jwks.json
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: houm.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: api.houm.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+- host: help.houm.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: blog.houm.com
+  note: >-
+    WordPress on a catch-all route — every /.well-known path returns HTTP 200 with the blog's HTML
+    homepage. These are SPA/CMS catch-all false positives, not documents, and are recorded as
+    misses.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+supplementary:
+- path: /robots.txt
+  host: houm.com
+  status: 200
+  file: well-known/houm-robots.txt
+  note: >-
+    Not a /.well-known document and not scored as one. Captured because it carries an explicit
+    AI-agent allow block — GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended, ClaudeBot,
+    Claude-SearchBot, Claude-User and anthropic-ai are each granted Allow: / with the same Disallow
+    set as generic crawlers (/api/, /*/[mode], /*/contacto, /*/cotizador, /marketplace/). Houm
+    permits agent crawling of its public marketplace while disallowing its internal /api/ paths.
+- path: /llms.txt
+  host: houm.com
+  status: 200
+  file: llms/houm-llms.txt
+  note: Provider-published llms.txt, saved verbatim. See the LLMsTxt pointer in apis.yml.
+- path: /wp-json/
+  host: blog.houm.com
+  status: 200
+  file: null
+  note: >-
+    The stock WordPress REST API index on Houm's blog host — the only anonymously readable
+    machine-readable surface in the estate besides the Auth0 discovery documents. It is WordPress
+    core, not a Houm product API, so it is recorded here and deliberately NOT registered as an
+    apis[] entry or converted into an OpenAPI.
+- path: /sitemap.xml
+  host: houm.com
+  status: 404
+  file: null
+  note: >-
+    Apex /sitemap.xml 404s; robots.txt instead names three per-country sitemaps
+    (sitemap-cl.xml, sitemap-mx.xml, sitemap-co.xml), each of which returns 200.

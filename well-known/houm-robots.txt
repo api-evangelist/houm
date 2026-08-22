@@ -1,0 +1,31 @@
+Sitemap: https://houm.com/sitemap-mx.xml
+Sitemap: https://houm.com/sitemap-cl.xml
+Sitemap: https://houm.com/sitemap-co.xml
+
+# Reglas generales para buscadores tradicionales
+User-agent: *
+Allow: /
+Allow: /api/sitemap.xml
+Disallow: /api/
+Disallow: /*/[mode]
+Disallow: /*/contacto
+Disallow: /*/cotizador
+Disallow: /marketplace/
+
+
+# Permisos específicos para Agentes de IA
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+Allow: /
+Allow: /api/sitemap.xml
+Disallow: /api/
+Disallow: /*/[mode]
+Disallow: /*/contacto
+Disallow: /*/cotizador
+Disallow: /marketplace/

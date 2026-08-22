@@ -1,7 +1,18 @@
 aid: houm
 name: Houm
-description: 'Houm is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Houm (Houm Technologies SpA) is a Chilean proptech operating a digital real-estate brokerage and
+  rental-management marketplace across Chile, Mexico and Colombia, with operations in Santiago, Viña
+  del Mar, Concepcion, Bogota and Ciudad de Mexico. Founded in 2018 by Benjamin Labra and Nicolas
+  Knockaert, the company lets owners list, rent and sell apartments and houses without a guarantor
+  (sin aval), guarantees on-time rent payment to the owner even when the tenant does not pay, and
+  runs a network of freelance field agents ("Houmers") who photograph, show and manage properties.
+  Its ReV pricing algorithm (houm.com/cl/algoritmo-precio) values a property online, and it also
+  runs an investor product and a broker exchange (Houm Aliados / Canje Corredores). Houm raised a
+  $35M Series A in 2021 led by Goodwater Capital. As of this profile Houm publishes no public
+  developer program, API reference or machine-readable contract; its production backend at
+  api.houm.com answers 403 to every anonymous request and carries no published documentation.
+image: https://houm.com/static/images/seo/preview-cl.jpg
 url: https://raw.githubusercontent.com/api-evangelist/houm/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +23,15 @@ created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Real Estate
+- Proptech
+- Property Management
+- Rentals
+- Marketplace
+- Latin America
+- Chile
+- Mexico
+- Colombia
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +39,66 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/houm-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/houm-stock
+  url: https://houm.com
+- type: Blog
+  url: https://blog.houm.com
+- type: Support
+  url: https://help.houm.com/cl
+- type: HelpCenter
+  url: https://help.houm.com/cl
+- type: PrivacyPolicy
+  url: https://help.houm.com/cl/articles/104/politic-1
+- type: TermsOfService
+  url: https://help.houm.com/cl/articles/397/t-1
+- type: GitHubOrganization
+  url: https://github.com/houm-com
+- type: LLMsTxt
+  url: llms/houm-llms.txt
+- type: Plans
+  url: plans/houm-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/houm-rate-limits.yml
+- type: WellKnown
+  url: well-known/houm-well-known.yml
+- type: Authentication
+  url: authentication/houm-authentication.yml
+- type: OAuthScopes
+  url: scopes/houm-scopes.yml
+- type: Conformance
+  url: conformance/houm-conformance.yml
+- type: Packages
+  url: packages/houm-packages.yml
+x-enrichment:
+  date: '2026-08-22'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Houm ships software only as an end-user product — no developer portal, no API reference and no
+    machine-readable contract exists anywhere in its estate: developers.houm.com does not resolve,
+    docs.houm.com is an AWS API Gateway custom domain with no route mapped (403 Missing
+    Authentication Token), api.houm.com refuses every anonymous path with 403 Forbidden, the
+    github.com/houm-com organization has 0 public repositories, and help.houm.com is an end-user
+    help centre with no developer section. The only anonymously readable machine-readable surfaces
+    are Houm's own Auth0 OIDC discovery documents at auth.houm.com and the stock WordPress REST API
+    on its blog host, neither of which is a Houm product API.
+  evidence:
+  - url: https://developers.houm.com/
+    status: 0
+  - url: https://docs.houm.com/
+    status: 403
+  - url: https://api.houm.com/
+    status: 403
+  - url: https://houm.com/openapi.json
+    status: 404
+  - url: https://api.github.com/orgs/houm-com/repos
+    status: 200
+  - url: https://auth.houm.com/.well-known/openid-configuration
+    status: 200
+  checked: '2026-08-22'

@@ -1,0 +1,21 @@
+generated: '2026-08-22'
+method: searched
+source: https://houm.com/
+name: Houm rate limits
+limit_count: 0
+note: >-
+  No published rate limits, because Houm publishes no public API and no developer documentation of
+  any kind. Its production host api.houm.com refuses every anonymous request with HTTP 403
+  {"message":"Forbidden"} (AWS API Gateway edge), returning no RateLimit-*, X-RateLimit-* or
+  Retry-After headers to observe, and no docs host was found that documents any. An honest zero.
+limits: []
+response_headers: []
+exhaustion_status: null
+evidence:
+- url: https://api.houm.com/
+  status: 403
+- url: https://api.houm.com/v1/
+  status: 500
+- url: https://developers.houm.com/
+  status: 0
+  note: DNS does not resolve

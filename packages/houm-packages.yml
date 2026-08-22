@@ -1,0 +1,60 @@
+generated: '2026-08-22'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=houm
+name: Houm packages and SDKs
+note: >-
+  Houm publishes NO first-party client libraries or SDKs on any public registry. npm, PyPI,
+  RubyGems, crates.io and Packagist were all searched; only one loosely related package exists and
+  it is not first-party (see unverified_candidates). Houm's GitHub organization github.com/houm-com
+  is real and links back to houm.com, but it has 0 public repositories. No SDKs pointer is emitted
+  in apis.yml — there is no SDK to point at.
+packages: []
+sdk_count: 0
+registries_searched:
+- registry: npm
+  query: houm
+  status: 200
+  official_hits: 0
+- registry: pypi
+  query: houm
+  status: 404
+  official_hits: 0
+- registry: rubygems
+  query: houm
+  status: 404
+  official_hits: 0
+- registry: crates.io
+  query: houm
+  status: 200
+  official_hits: 0
+- registry: packagist
+  query: houm
+  status: 200
+  official_hits: 0
+unverified_candidates:
+- name: houm-icons
+  registry: npm
+  url: https://www.npmjs.com/package/houm-icons
+  version: 1.1.0
+  published: '2022-03-11'
+  official: false
+  language: javascript
+  repository: https://github.com/elevyg/houm-icons
+  note: >-
+    A React / React Native icon set described by its own repository as a "proof of concept to
+    export houm icons". Published from the personal npm/GitHub account `elevyg`, not from Houm or
+    from github.com/houm-com, and Houm does not reference it anywhere on its site. Recorded as
+    UNVERIFIED, official:false — it is not an API client library and must not be counted as a Houm
+    SDK. Last release 2022-03-11, unchanged for over four years.
+mobile_apps:
+- name: 'Houm: Asesores'
+  registry: app-store
+  url: https://apps.apple.com/us/app/houm-asesores/id1630826128
+  version: 1.20.0
+  published: '2026-06-13'
+  official: true
+  publisher: HOUM COLOMBIA S A S
+  note: >-
+    First-party iOS application for Houm's field agents ("Houmers"). Recorded for currency evidence
+    only — a consumer/field app is not a developer SDK, carries no public contract, and is
+    deliberately excluded from sdk_count and from any SDKs pointer.

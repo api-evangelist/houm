@@ -1,0 +1,44 @@
+generated: '2026-08-22'
+method: probed
+source: https://auth.houm.com/.well-known/openid-configuration
+name: Houm OAuth / OIDC scopes
+note: >-
+  Read verbatim from scopes_supported in the OpenID Connect discovery document Houm's Auth0 custom
+  domain serves at auth.houm.com. These are the standard OIDC scopes an Auth0 tenant advertises —
+  Houm publishes no API-specific or product-specific scope reference, because it publishes no
+  public API. No scope descriptions are provided by the issuer; the descriptions below are the
+  OpenID Connect Core 1.0 / Auth0 standard meanings of each claim scope, not Houm's own text.
+docs: null
+scope_count: 14
+scopes:
+- name: openid
+  description: Required to obtain an ID token; identifies the request as OpenID Connect.
+- name: profile
+  description: Basic profile claims (name, family_name, given_name, nickname, picture, updated_at).
+- name: offline_access
+  description: Issues a refresh token so the client can obtain new access tokens without the user present.
+- name: name
+  description: The end-user's full name claim.
+- name: given_name
+  description: The end-user's given name claim.
+- name: family_name
+  description: The end-user's family name claim.
+- name: nickname
+  description: The end-user's nickname claim.
+- name: email
+  description: The end-user's email address claim.
+- name: email_verified
+  description: Whether the end-user's email address has been verified.
+- name: picture
+  description: URL of the end-user's profile picture.
+- name: created_at
+  description: Auth0 claim carrying the timestamp the user record was created.
+- name: identities
+  description: Auth0 claim carrying the linked identity providers for the user.
+- name: phone
+  description: The end-user's phone_number and phone_number_verified claims.
+- name: address
+  description: The end-user's postal address claim.
+evidence:
+- url: https://auth.houm.com/.well-known/openid-configuration
+  status: 200

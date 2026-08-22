@@ -1,0 +1,73 @@
+generated: '2026-08-22'
+method: probed
+source: https://auth.houm.com/.well-known/openid-configuration
+name: Houm standards conformance
+note: >-
+  Assertions below are drawn only from documents Houm actually serves. Houm publishes no OpenAPI,
+  no API reference and no compliance/trust page, so every contract-level and compliance-level
+  standard is recorded as not-conformant-on-the-evidence rather than assumed. No domain standard
+  for the real-estate market (RESO Data Dictionary / RESO Web API, MISMO, OSCRE) is declared by any
+  Houm-served document; this is reward-only, so its absence is not a penalty — it is simply
+  unmeasured because Houm ships no contract to measure.
+entries:
+- id: oidc
+  name: OpenID Connect Core 1.0 Discovery
+  conforms: true
+  evidence: >-
+    https://auth.houm.com/.well-known/openid-configuration returns HTTP 200 with a complete
+    discovery document — issuer, authorization_endpoint, token_endpoint, userinfo_endpoint,
+    jwks_uri, subject_types_supported, id_token_signing_alg_values_supported, response_types_supported.
+    Saved verbatim to well-known/houm-openid-configuration.json.
+- id: oauth2
+  name: OAuth 2.0 (RFC 6749) + Authorization Server Metadata (RFC 8414)
+  conforms: true
+  evidence: >-
+    https://auth.houm.com/.well-known/oauth-authorization-server returns HTTP 200 with the RFC 8414
+    metadata document; grant_types_supported includes authorization_code, client_credentials,
+    refresh_token and urn:ietf:params:oauth:grant-type:token-exchange.
+- id: oauth2-pkce
+  name: PKCE (RFC 7636)
+  conforms: true
+  evidence: 'code_challenge_methods_supported: ["S256","plain"] in the discovery document.'
+- id: oauth2-device
+  name: OAuth 2.0 Device Authorization Grant (RFC 8628)
+  conforms: true
+  evidence: >-
+    device_authorization_endpoint https://auth.houm.com/oauth/device/code and grant type
+    urn:ietf:params:oauth:grant-type:device_code declared in the discovery document.
+- id: jwks
+  name: JSON Web Key Set (RFC 7517)
+  conforms: true
+  evidence: https://auth.houm.com/.well-known/jwks.json returns HTTP 200 with an RSA sig key set.
+- id: fapi
+  name: Financial-grade API (FAPI 1.0/2.0)
+  conforms: false
+  evidence: >-
+    Not claimed and not supported by the metadata — the tenant advertises the implicit and
+    resource-owner-password grants and token_endpoint_auth_method "none", all of which FAPI
+    prohibits.
+- id: rfc9116
+  name: security.txt (RFC 9116)
+  conforms: false
+  evidence: >-
+    /.well-known/security.txt returns 404 on houm.com, auth.houm.com and help.houm.com, and 403 on
+    api.houm.com. See well-known/houm-well-known.yml.
+- id: rfc9457
+  name: Problem Details for HTTP APIs (RFC 9457)
+  conforms: false
+  evidence: >-
+    Unmeasurable — no public API or error reference is published. api.houm.com returns a bare
+    {"message":"Forbidden"} AWS API Gateway envelope, which is not application/problem+json.
+- id: openapi
+  name: OpenAPI Specification
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document found at any probed location on houm.com, api.houm.com,
+    docs.houm.com, help.houm.com or blog.houm.com. See x-coverage in apis.yml.
+- id: reso-web-api
+  name: RESO Web API / RESO Data Dictionary (real-estate domain standard)
+  conforms: false
+  evidence: >-
+    No RESO OData $metadata surface, Data Dictionary reference, or RESO membership claim appears on
+    any Houm-served page. RESO is a North American MLS standard and Houm operates in CL/MX/CO, so
+    its absence is expected rather than a gap; recorded for completeness only.

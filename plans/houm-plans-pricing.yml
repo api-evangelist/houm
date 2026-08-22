@@ -1,0 +1,83 @@
+generated: '2026-08-22'
+method: searched
+source: https://houm.com/cl/propietario/arriendo
+name: Houm plans and pricing
+plan_count: 0
+note: >-
+  Houm publishes NO API plans, because Houm publishes no public API. The plans it does publish are
+  consumer/owner service plans for property brokerage and rental administration, recorded below as
+  context only — they are not API tiers and are deliberately not counted in plan_count. Houm also
+  does not publish a dedicated pricing page: houm.com/cl/precios, /cl/planes and /cl/propietario/precios
+  all return 404, and the terms article that governs the plans states the prices "se encuentran
+  publicados en el Sitio Web en la seccion 'Precios'" — a section that no longer exists at any
+  probed URL. Commission figures below are the only prices stated on a reachable public page.
+api_plans: []
+service_plans:
+- name: Solo Corretaje
+  audience: property owner
+  country: CL
+  price: 50% + IVA of one month's rent
+  currency: CLP
+  billing_period: one-time
+  includes:
+  - professional photography and video of the property
+  - property showings by a Houmer
+  source: https://houm.com/cl/propietario/arriendo
+- name: Plan Basico
+  audience: property owner
+  country: CL
+  price: null
+  currency: CLP
+  billing_period: monthly
+  note: >-
+    Commission is deducted from the monthly rent before the remainder is deposited to the owner.
+    The percentage is not stated on any reachable public page.
+  includes:
+  - brokerage
+  - rent collection
+  - lease administration
+  - debt collection
+  - rent advance where applicable
+  source: https://help.houm.com/cl/articles/399/t-2
+- name: Plan Basico con Seguro
+  audience: property owner (furnished properties only)
+  country: CL
+  price: null
+  currency: CLP
+  billing_period: monthly
+  note: >-
+    Same terms as Plan Basico plus insurance underwritten by authorized insurers, subject to the
+    insurer's property-condition and tenant-eligibility standards. Price not published.
+  source: https://help.houm.com/cl/articles/399/t-2
+- name: Premium
+  audience: property owner
+  country: CL
+  price: null
+  currency: CLP
+  billing_period: monthly
+  includes:
+  - rental insurance covering up to 6 months of unpaid rent
+  - legal expenses related to eviction
+  source: https://houm.com/cl/propietario/arriendo
+  terms: https://help.houm.com/cl/articles/400/t-3
+- name: Premium Plus
+  audience: property owner
+  country: CL
+  price: null
+  currency: CLP
+  billing_period: monthly
+  note: >-
+    Named alongside Premium in the plan terms article; no price or feature list is published on any
+    reachable public page.
+  terms: https://help.houm.com/cl/articles/400/t-3
+evidence:
+- url: https://houm.com/cl/propietario/arriendo
+  status: 200
+- url: https://help.houm.com/cl/articles/399/t-2
+  status: 200
+- url: https://houm.com/cl/precios
+  status: 404
+- url: https://houm.com/cl/planes
+  status: 404
+- url: https://houm.com/cl/propietario/precios
+  status: 404
