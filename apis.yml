@@ -12,6 +12,17 @@ description: >-
   $35M Series A in 2021 led by Goodwater Capital. As of this profile Houm publishes no public
   developer program, API reference or machine-readable contract; its production backend at
   api.houm.com answers 403 to every anonymous request and carries no published documentation.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://houm.com/static/images/seo/preview-cl.jpg
 url: https://raw.githubusercontent.com/api-evangelist/houm/refs/heads/main/apis.yml
 x-type: company
