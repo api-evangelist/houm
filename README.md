@@ -64,5 +64,103 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Houm is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/houm-stock
+Houm (Houm Technologies SpA) is a Chilean proptech operating a digital real-estate brokerage and rental-management marketplace across Chile, Mexico and Colombia, with operations in Santiago, Viña del Mar, Concepcion, Bogota and Ciudad de Mexico. Founded in 2018 by Benjamin Labra and Nicolas Knockaert, the company lets owners list, rent and sell apartments and houses without a guarantor (sin aval), guarantees on-time rent payment to the owner even when the tenant does not pay, and runs a network of freelance field agents ("Houmers") who photograph, show and manage properties. Its ReV pricing algorithm (houm.com/cl/algoritmo-precio) values a property online, and it also runs an investor product and a broker exchange (Houm Aliados / Canje Corredores). Houm raised a $35M Series A in 2021 led by Goodwater Capital. As of this profile Houm publishes no public developer program, API reference or machine-readable contract; its production backend at api.houm.com answers 403 to every anonymous request and carries no published documentation.
+
+**Areas:** Company · Real Estate · PropTech · Property Management · Rentals · Marketplace · Latin America · Chile · Mexico · Colombia
+
+## Houm on APIs.io
+
+Everything profiled for Houm is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/houm/](https://apis.io/providers/houm/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Houm Authentication](https://apis.io/security/houm/houm-authentication/)
+- [Houm Domain Security](https://apis.io/security/houm/houm-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Houm Scopes](https://apis.io/scopes/houm/houm-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Houm Plans Pricing](https://apis.io/plans/houm/houm-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Houm Rate Limits](https://apis.io/rate-limits/houm/houm-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://houm.com)
+- [Support](https://help.houm.com/cl)
+- [Blog](https://blog.houm.com)
+- [Terms of service](https://help.houm.com/cl/articles/397/t-1)
+- [Privacy policy](https://help.houm.com/cl/articles/104/politic-1)
+- [GitHub](https://github.com/houm-com)
+
+## API Evangelist rating
+
+**Kin Score 16.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 21.1 |
+
+**Agent readiness 17.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 34.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/houm/](https://apis.io/providers/houm/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Houm: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/houm/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
